@@ -1,0 +1,176 @@
+
+> haven-os@0.1.0 dev
+> next dev
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.0.132:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 16.8s
+ ○ Compiling / ...
+ GET / 200 in 1200ms (compile: 30ms, render: 1170ms)
+ POST /api/lifecycle 200 in 3.2s (compile: 2.6s, render: 621ms)
+ POST / 200 in 1380ms (compile: 14ms, render: 1366ms)
+[Embed] Generating embedding for: "AI Course Idea A basic AI course outline with intr..."
+Embedding API Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent: [404 Not Found] models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.
+    at async POST (src/app/api/embed/route.ts:23:24)
+  21 |         console.log(`[Embed] Generating embedding for: "${text.substring(0, 50)}..."`);
+  22 |
+> 23 |         const result = await model.embedContent(text);
+     |                        ^
+  24 |         const embedding = result.embedding.values;
+  25 |
+  26 |         console.log(`[Embed] Generated ${embedding.length}-dimensional vector`); {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+ POST /api/embed 500 in 785ms (compile: 271ms, render: 514ms)
+ ✓ Compiled in 3.6s
+ ✓ Compiled in 920ms
+ POST /api/agents/course 200 in 8.5s (compile: 1700ms, render: 6.8s)
+[Quiz Master] API called at: 2026-02-08T05:25:56.734Z
+[Quiz Master] Received nodes: 1 user prompt: Generate a comprehensive quiz for the course: New Course
+[Quiz Master] Node 0: {
+  label: 'New Course',
+  contentLength: 0,
+  hasCourseData: true,
+  modulesCount: 0
+}
+[Quiz Master] Content parts generated, total length: 19
+[Quiz Master] Calling Gemini API...
+[Quiz Master] Gemini API responded
+[Quiz Master] Response text length: 2921
+[Quiz Master] Quiz generated successfully: 5 questions
+[Quiz Master] Returning response with result keys: [ 'content', 'metadata', 'nextAgent' ]
+[Quiz Master] Result metadata keys: [ 'questions', 'courseInsights' ]
+ POST /api/agents/quiz 200 in 5.8s (compile: 797ms, render: 5.0s)
+ POST /api/agents/course 200 in 6.2s (compile: 16ms, render: 6.2s)
+ POST /api/agents/course 200 in 7.5s (compile: 13ms, render: 7.5s)
+ ✓ Compiled in 2.9s
+ ○ Compiling /api/agents ...
+ POST /api/agents 200 in 17.3s (compile: 13.0s, render: 4.3s)
+ POST /api/ai/repurpose 200 in 3.9s (compile: 888ms, render: 3.0s)
+ ✓ Compiled in 3.3s
+ ✓ Compiled in 1413ms
+Script generation error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [403 Forbidden] Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.
+    at async POST (src/app/api/agents/script/route.ts:95:24)
+  93 | Return ONLY valid JSON, no markdown or explanation.`;
+  94 |
+> 95 |         const result = await model.generateContent(prompt);
+     |                        ^
+  96 |         const responseText = result.response.text();
+  97 |
+  98 |         // Parse the JSON response {
+  status: 403,
+  statusText: 'Forbidden',
+  errorDetails: undefined
+}
+ POST /api/agents/script 500 in 5.2s (compile: 2.9s, render: 2.3s)
+ GET / 200 in 4.3s (compile: 3.0s, render: 1293ms)
+ GET / 200 in 622ms (compile: 319ms, render: 303ms)
+ GET / 200 in 235ms (compile: 46ms, render: 189ms)
+ GET / 200 in 216ms (compile: 53ms, render: 164ms)
+ GET / 200 in 184ms (compile: 10ms, render: 174ms)
+ GET / 200 in 308ms (compile: 15ms, render: 293ms)
+ GET / 200 in 300ms (compile: 16ms, render: 284ms)
+ GET / 200 in 187ms (compile: 23ms, render: 164ms)
+ GET / 200 in 335ms (compile: 19ms, render: 316ms)
+ GET / 200 in 247ms (compile: 32ms, render: 216ms)
+ GET / 200 in 198ms (compile: 32ms, render: 167ms)
+ GET / 200 in 125ms (compile: 14ms, render: 111ms)
+ GET / 200 in 116ms (compile: 14ms, render: 103ms)
+ GET / 200 in 127ms (compile: 7ms, render: 120ms)
+ GET / 200 in 89ms (compile: 4ms, render: 84ms)
+ GET / 200 in 72ms (compile: 9ms, render: 63ms)
+ GET / 200 in 80ms (compile: 4ms, render: 76ms)
+ GET / 200 in 72ms (compile: 13ms, render: 59ms)
+ GET / 200 in 94ms (compile: 12ms, render: 82ms)
+ GET / 200 in 133ms (compile: 14ms, render: 118ms)
+ GET / 200 in 84ms (compile: 14ms, render: 71ms)
+ GET / 200 in 85ms (compile: 7ms, render: 78ms)
+ GET / 200 in 70ms (compile: 7ms, render: 63ms)
+ GET / 200 in 116ms (compile: 19ms, render: 97ms)
+ GET / 200 in 119ms (compile: 17ms, render: 102ms)
+ GET / 200 in 110ms (compile: 4ms, render: 106ms)
+ GET / 200 in 64ms (compile: 5ms, render: 59ms)
+ GET / 200 in 315ms (compile: 6ms, render: 309ms)
+ GET / 200 in 187ms (compile: 17ms, render: 169ms)
+ GET / 200 in 115ms (compile: 12ms, render: 103ms)
+ GET / 200 in 81ms (compile: 10ms, render: 72ms)
+ GET / 200 in 87ms (compile: 16ms, render: 70ms)
+ GET / 200 in 212ms (compile: 25ms, render: 188ms)
+ GET / 200 in 146ms (compile: 49ms, render: 97ms)
+ GET / 200 in 84ms (compile: 4ms, render: 81ms)
+ GET / 200 in 119ms (compile: 6ms, render: 113ms)
+ GET / 200 in 120ms (compile: 16ms, render: 104ms)
+ GET / 200 in 72ms (compile: 9ms, render: 63ms)
+ GET / 200 in 126ms (compile: 12ms, render: 114ms)
+ GET / 200 in 79ms (compile: 14ms, render: 65ms)
+ GET / 200 in 54ms (compile: 15ms, render: 39ms)
+ GET / 200 in 96ms (compile: 5ms, render: 92ms)
+ GET / 200 in 72ms (compile: 3ms, render: 69ms)
+ GET / 200 in 217ms (compile: 12ms, render: 204ms)
+ GET / 200 in 154ms (compile: 30ms, render: 124ms)
+ GET / 200 in 113ms (compile: 14ms, render: 99ms)
+ GET / 200 in 71ms (compile: 4ms, render: 67ms)
+ GET / 200 in 59ms (compile: 5ms, render: 54ms)
+ GET / 200 in 170ms (compile: 4ms, render: 166ms)
+ GET / 200 in 96ms (compile: 12ms, render: 83ms)
+ GET / 200 in 118ms (compile: 25ms, render: 93ms)
+ GET / 200 in 85ms (compile: 14ms, render: 71ms)
+ GET / 200 in 69ms (compile: 4ms, render: 65ms)
+ GET / 200 in 81ms (compile: 9ms, render: 73ms)
+ GET / 200 in 134ms (compile: 17ms, render: 117ms)
+ GET / 200 in 77ms (compile: 14ms, render: 63ms)
+ ✓ Compiled in 6.7s
+ ✓ Compiled in 13.8s
+ ✓ Compiled in 1625ms
+ ✓ Compiled in 6.5s
+ GET / 200 in 3.3s (compile: 904ms, render: 2.4s)
+ POST /api/lifecycle 200 in 1801ms (compile: 367ms, render: 1434ms)
+ POST /api/agents/tutor 200 in 4.8s (compile: 3.1s, render: 1666ms)
+ POST /api/agents/tutor 200 in 1991ms (compile: 9ms, render: 1982ms)
+ POST /api/agents/tutor 200 in 3.6s (compile: 13ms, render: 3.6s)
+ ✓ Compiled in 2.7s
+ POST /api/agents/course 200 in 7.4s (compile: 368ms, render: 7.0s)
+ POST /api/agents/course 200 in 8.1s (compile: 560ms, render: 7.5s)
+ POST /api/agents/tutor 200 in 1849ms (compile: 11ms, render: 1838ms)
+ POST /api/agents/course 200 in 5.2s (compile: 4ms, render: 5.2s)
+ ○ Compiling /_not-found/page ...
+ GET /api/vault 404 in 11.7s (compile: 10.2s, render: 1483ms)
+ POST /api/agents 200 in 2.3s (compile: 548ms, render: 1724ms)
+ GET /api/vault 404 in 401ms (compile: 14ms, render: 388ms)
+ POST /api/agents 200 in 4.2s (compile: 37ms, render: 4.2s)
+ GET /api/vault 404 in 94ms (compile: 8ms, render: 85ms)
+ POST /api/agents 200 in 5.6s (compile: 4ms, render: 5.6s)
+ GET /api/vault 404 in 105ms (compile: 14ms, render: 91ms)
+ POST /api/agents 200 in 2.6s (compile: 11ms, render: 2.5s)
+ GET /api/vault 404 in 125ms (compile: 34ms, render: 91ms)
+ POST /api/agents 200 in 3.0s (compile: 4ms, render: 3.0s)
+ GET /api/vault 404 in 410ms (compile: 160ms, render: 251ms)
+ POST /api/agents 200 in 3.8s (compile: 15ms, render: 3.7s)
+ POST /api/agents 200 in 1274ms (compile: 55ms, render: 1220ms)
+ POST /api/agents 200 in 1573ms (compile: 26ms, render: 1547ms)
+ GET /api/vault 404 in 1283ms (compile: 259ms, render: 1024ms)
+ POST /api/agents 200 in 2.5s (compile: 58ms, render: 2.5s)
+ GET /api/vault 404 in 561ms (compile: 156ms, render: 405ms)
+ POST /api/agents 200 in 4.2s (compile: 26ms, render: 4.2s)
+ GET /api/vault 404 in 228ms (compile: 91ms, render: 137ms)
+ POST /api/agents 200 in 5.5s (compile: 35ms, render: 5.5s)
+ GET /api/vault 404 in 171ms (compile: 50ms, render: 121ms)
+ POST /api/agents 200 in 3.0s (compile: 6ms, render: 3.0s)
+ GET /api/vault 404 in 1429ms (compile: 23ms, render: 1406ms)
+ POST /api/agents 200 in 2.7s (compile: 37ms, render: 2.6s)
+ GET /api/vault 404 in 126ms (compile: 47ms, render: 79ms)
+ POST /api/agents 200 in 1588ms (compile: 6ms, render: 1582ms)
+ GET /api/vault 404 in 1607ms (compile: 279ms, render: 1328ms)
+ POST /api/agents 200 in 6.5s (compile: 30ms, render: 6.5s)
+ GET /api/vault 404 in 528ms (compile: 120ms, render: 407ms)
+ POST /api/agents 200 in 2.3s (compile: 20ms, render: 2.3s)
+ ✓ Compiled in 5s
+ ✓ Compiled in 1244ms
+ ✓ Compiled in 1921ms
